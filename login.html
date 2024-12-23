@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="lg.css" />
+  </head>
+  <body>
+    <header class="header1">
+      <img class="logo" src="unifest logo.jpg" alt="logo" />
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="create.html">Create Events</a></li>
+        </ul>
+      </div>
+      <a class="cta" href="register.html"><button>Log In/Sign Up</button></a>
+      <div class="search-container"></div>
+      <span class="search-icon"
+        ><i class="fa-solid fa-magnifying-glass" style="color: white"></i
+      ></span>
+      <input type="text" class="search-bar" placeholder="Search..." />
+    </header>
+    <div class="container">
+      <input type="checkbox" id="check" />
+      <!-- Login Form -->
+      <div class="login form" id="loginForm">
+        <header class="heading">Login</header>
+        <form action="">
+          <input
+            type="text"
+            id="loginEmail"
+            placeholder="Enter your email"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter your password"
+            required
+          />
+          <div id="loginStrength" class="strength-indicator"></div>
+          <!-- Password Strength Indicator -->
+          <a href="">Forgot password?</a>
+          <input type="button" class="button" value="Login" />
+        </form>
+        <div class="signup">
+          <span class="signup"
+            >Don't have an account?
+            <label for="check">Signup</label>
+          </span>
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="registration form" id="signupForm">
+        <header class="heading">Signup</header>
+        <form action="">
+          <input
+            type="text"
+            id="signupEmail"
+            placeholder="Enter your email"
+            required
+          />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Create password"
+            required
+          />
+          <div id="signupStrength" class="strength-indicator"></div>
+          <!-- Password Strength Indicator -->
+          <input type="button" class="button" value="Signup" />
+        </form>
+        <div class="signup">
+          <span class="signup"
+            >Already have an account?
+            <label for="check">Login</label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="lg.js"></script>
+  </body>
+</html>

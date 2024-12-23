@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create Event</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="create.css">
+</head>
+<body>
+  <header>
+    <img class="logo" src="unifest logo.jpg" alt="logo">
+    <div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <!-- <li><a href="create.html">Create Events</a></li> -->
+        </ul>
+    </div>
+    
+    <a class="cta" href="login.html"><button>Log In/Sign Up</button></a>
+    <div class="search-container"></div>
+        <span class="search-icon"></span>
+        <input type="text" class="search-bar" placeholder="Search...">
+      
+</header>
+
+  <div class="container">
+    <h1>Create Event</h1>
+
+    <!-- First Section: Full Name -->
+    <h2>Let's get to know you first</h2>
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" placeholder="Enter your full name" required>
+    <span class="error-message" id="nameError">This field is required.</span>
+
+    <!-- Contact Information Section -->
+    <h2>Organizer Contact Information</h2>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <span class="error-message" id="emailError">This field is required.</span>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+    <span class="error-message" id="phoneError">This field is required.</span>
+
+    <!-- Event Type Section -->
+    <h2>What type of event do you want to host?</h2>
+    <label for="eventType">Select Event Type:</label>
+    <select id="eventType" required>
+      <option value="" disabled selected>Select Event Type</option>
+      <option value="Seminar/conference">Seminar/Conference</option>
+      <option value="Hackathons">Hackathons</option>
+      <option value="Sports">Sports</option>
+      <option value="Music and concert">Music and Concert</option>
+      <option value="Dance">Dance</option>
+      <option value="Drama">Drama</option>
+      <option value="Exhibition">Exhibition</option>
+      <option value="Workshop">Workshop</option>
+      <option value="Art">Art</option>
+      <option value="Elevator Pitch">Elevator Pitch</option>
+      <option value="Festival">Festival</option>
+      <option value="Volunteering/Social Work">Volunteering/Social Work</option>
+      <option value="Book Club">Book Club</option>
+      <option value="Others">Others</option>
+    </select>
+    <span class="error-message" id="eventTypeError">This field is required.</span>
+
+    <!-- Event Tags Section -->
+    <h2>Event Tags</h2>
+    <label for="tags">Add relevant tags (comma separated):</label>
+    <input type="text" id="tags" placeholder="e.g., networking, keynote">
+    <span class="error-message" id="tagsError">This field is required.</span>
+
+    <!-- Social Media Links Section -->
+    <h2>Social Media Links</h2>
+    <label for="socialMedia">Event Social Media Links:</label>
+    <input type="url" id="socialMedia" placeholder="Enter event social media links">
+
+    <!-- Number of Events Section -->
+    <h2>Number of Events?</h2>
+    <label for="numEvents">Enter Number of Events:</label>
+    <input type="number" id="numEvents" min="1" placeholder="Enter the number of events" required>
+    <span class="error-message" id="numEventsError">This field is required.</span>
+
+    <!-- Event Name Section -->
+    <h2>What is the name of the event?</h2>
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" placeholder="Enter event name" required>
+    <span class="error-message" id="eventNameError">This field is required.</span>
+
+    <!-- Event Description Section -->
+    <h2>Provide a brief description of the event</h2>
+    <label for="eventDescription">Event Description:</label>
+    <textarea id="eventDescription" rows="4" placeholder="Describe your event" required></textarea>
+    <span class="error-message" id="eventDescriptionError">This field is required.</span>
+
+    <!-- Event Date and Time Section -->
+    <h2>When does your event start and end?</h2>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" required>
+    <span class="error-message" id="startDateError">This field is required.</span>
+
+    <label for="startTime">Start Time:</label>
+    <input type="time" id="startTime" required>
+    <span class="error-message" id="startTimeError">This field is required.</span>
+
+    <label for="endTime">End Time:</label>
+    <input type="time" id="endTime" required>
+    <span class="error-message" id="endTimeError">This field is required.</span>
+
+    <!-- Location Section -->
+    <h2>Where is the location?</h2>
+    <label for="locationType">Choose Location:</label>
+    <input type="radio" id="venue" name="locationType" value="Venue" checked onclick="toggleLocation()"> Venue
+    <input type="radio" id="online" name="locationType" value="Online" onclick="toggleLocation()"> Online
+
+    <label for="location" id="locationLabel">Location:</label>
+    <input type="text" id="location" placeholder="Enter event location" required>
+    <span class="error-message" id="locationError">This field is required.</span>
+
+    <!-- Charging Section -->
+    <h2>How much do you want to charge?</h2>
+    <label for="eventCharge">Charge per person ($):</label>
+    <input type="number" id="eventCharge" min="0" placeholder="Enter charge for event" required>
+    <span class="error-message" id="eventChargeError">This field is required.</span>
+
+    <!-- Max Capacity Section -->
+    <h2>Maximum number of attendees?</h2>
+    <label for="maxCapacity">Max Capacity:</label>
+    <input type="number" id="maxCapacity" min="1" placeholder="Enter max number of attendees" required>
+    <span class="error-message" id="maxCapacityError">This field is required.</span>
+
+    <!-- Image Upload Section -->
+    <h2>Upload an image for the event</h2>
+    <label for="eventImage">Upload Event Image: <i class="fa-solid fa-image"></i></label>
+    <input type="file" id="eventImage" accept="image/*">
+
+    <!-- Confirmation Section -->
+    <h2>Confirmation</h2>
+    <label><input type="checkbox" id="confirmDetails" required> I confirm that the event details are correct.</label>
+    <span class="error-message" id="confirmDetailsError">This field is required.</span>
+
+    <!-- Submit Button -->
+    <input type="submit" class="submit-btn" value="Create Event" onclick="validateForm()">
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Event Created Successfully!</h2>
+      <p>Your event has been created and will be reviewed shortly.</p>
+    </div>
+  </div>
+
+  <script src="create.js"></script>
+</body>
+</html>
